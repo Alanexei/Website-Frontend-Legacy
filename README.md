@@ -1,4 +1,10 @@
-# frontend
+# Frontend Legacy
+
+> This project was never finished.
+
+This is an open source, legacy version of my personal website. For showcase purposes only.
+
+![Screenshot_20210705_173745](https://user-images.githubusercontent.com/20159369/124522153-ccd1fe80-ddb7-11eb-8786-8c04737c3761.png)
 
 ## Project setup
 ```
