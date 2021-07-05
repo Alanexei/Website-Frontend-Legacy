@@ -1,0 +1,9 @@
+@mixin gradient($direction, $colors...) {
+  background: linear-gradient($direction, $colors);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.pink-orange-gradient {
+  @include gradient(to right, $light-pink, $orange);
+}

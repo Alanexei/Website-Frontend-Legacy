@@ -1,0 +1,311 @@
+.section-divider {
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 2rem;
+  left: 5rem;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 7rem;
+    height: 0.5rem;
+    background: linear-gradient(to right, $light-pink, $orange);
+    border-radius: 1rem;
+    vertical-align: middle;
+    margin-left: 2rem;
+  }
+}
+
+.section-divider-reversed {
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 2rem;
+  right: 5rem;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 7rem;
+    height: 0.5rem;
+    background: linear-gradient(to left, $light-pink, $orange);
+    border-radius: 1rem;
+    vertical-align: middle;
+    margin-right: 2rem;
+  }
+}
+
+.overlay {
+  position: fixed;
+  display: flex;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: $deep-black;
+  z-index: 1;
+  pointer-events: none;
+  animation: overlay 1s ease-out 0.7s forwards;
+
+  &__logo {
+    width: 7rem;
+    height: 7rem;
+    margin: auto;
+    animation: overlay__logo 1.6s ease-out forwards;
+  }
+}
+
+@keyframes overlay {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes overlay__logo {
+  from {
+    transform: translateY(-35px);
+    opacity: 0;
+  }
+  to {
+    filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+  }
+}
+
+.section-loader {
+  margin-top: 10%;
+  width: 100%;
+  height: 4rem;
+
+  @extend .spin;
+}
+
+#home {
+  background: linear-gradient($light-purple 15%, $dark-purple);
+  display: flex;
+  align-items: center;
+
+  .home__container {
+    width: 27rem;
+    margin-left: 20%;
+
+    .home__greeting {
+      font-size: 1.2rem;
+
+      &:before {
+        content: '👋';
+        margin-right: 1rem;
+      }
+    }
+
+    .home__name {
+      font-size: 4.5rem;
+      font-weight: 600;
+      margin-top: -0.2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .home__position {
+      font-size: 1.8rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      margin-bottom: 2rem;
+    }
+
+    .home__description {
+      font-family: Lato;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+#projects {
+  .project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 35rem);
+    grid-gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    padding: 10rem 3rem;
+
+    .project {
+      display: flex;
+      width: 35rem;
+      height: 12rem;
+      color: $black;
+
+      .project__image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 1rem;
+        border-radius: 25px 0 0 5px;
+
+        .project__image {
+          width: 10rem;
+          height: 10rem;
+        }
+      }
+
+      .project__content {
+        padding: 1rem 1.5rem;
+        border-radius: 0 5px 25px 0;
+        background-color: $white;
+
+        .project__button-container {
+          margin-bottom: 1rem;
+
+          .project__button {
+            display: inline-block;
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-right: 1rem;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 0px 0px 7px rgba($black, 0.25);
+
+            i {
+              font-size: 1.5rem;
+              line-height: 2.5rem;
+            }
+
+            @extend .hover-up;
+          }
+        }
+
+        .project__name {
+          font-size: 1.5rem;
+          font-weight: 600;
+          margin-bottom: 0.3rem;
+        }
+
+        .project__description {
+          font-family: Lato;
+          line-height: 1.4rem;
+        }
+      }
+    }
+  }
+
+  .no-projects {
+    display: block;
+    width: 100%;
+    margin-top: 10%;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
+
+#contact {
+  .contact-container {
+    display: flex;
+    padding: 6rem 3rem;
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      width: 40rem;
+      color: $black;
+      height: 100vh;
+
+      label {
+        position: relative;
+        margin-top: 1rem;
+        width: 12rem;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        text-transform: uppercase;
+        padding: 0 1rem;
+        background-color: $white;
+        color: $gray;
+        border-bottom: 1px solid $gray;
+        border-radius: 1rem 1rem 0 0;
+        white-space: nowrap;
+        overflow: hidden;
+
+        i {
+          font-size: 0.8rem;
+          margin-right: 0.5rem;
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          width: 1rem;
+          height: 1rem;
+          background: linear-gradient(135deg, $light-pink, $orange);
+          border-radius: 50%;
+          top: calc(50% - 0.5rem);
+          right: 1rem;
+        }
+      }
+
+      label,
+      input[type='text'],
+      textarea,
+      select {
+        background-color: $white;
+      }
+
+      input[type='text'],
+      textarea,
+      select {
+        font-family: Lato;
+        font-size: 1rem;
+        border: none;
+        border-radius: 0 0.2rem 0.2rem 0.2rem;
+
+        &:focus {
+          outline: none;
+          border: none;
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus {
+          // Disables the chrome autofill blue background color
+          box-shadow: 0 0 0px 1000px $white inset !important;
+        }
+      }
+
+      input[type='text'],
+      select {
+        padding: 0 1rem;
+        height: 3rem;
+      }
+
+      &__reason-box {
+        position: relative;
+
+        &__arrow {
+          position: absolute;
+          width: 1rem;
+          height: 1rem;
+          top: calc(50% - 0.5rem);
+          right: 0.7rem;
+        }
+
+        select {
+          width: 100%;
+          appearance: none;
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        padding: 1rem;
+        height: 15rem;
+        border: none;
+        line-height: 1.8rem;
+      }
+
+      input[type='submit'] {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+@for $i from 1 through 15 {
+  .w-#{$i} {
+    width: #{$i}rem;
+  }
+}
+
+@for $i from 1 through 5 {
+  .mt-#{$i} {
+    margin-top: #{$i}rem;
+  }
+}
+
+@for $i from 1 through 5 {
+  .mb-#{$i} {
+    margin-top: #{$i}rem;
+  }
+}
+
+@for $i from 1 through 5 {
+  .ml-#{$i} {
+    margin-right: #{$i}rem;
+  }
+}
+
+@for $i from 1 through 5 {
+  .mr-#{$i} {
+    margin-right: #{$i}rem;
+  }
+}
+
+.hover-up {
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  @extend .fast-transition;
+}
+
+.slow-transition {
+  transition: 1s all ease-out;
+}
+
+.medium-transition {
+  transition: 0.6s all ease-out;
+}
+
+.fast-transition {
+  transition: 0.3s all ease-out;
+}
+
+.spin {
+  animation: 2s spin cubic-bezier(0.23, 0.66, 0.8, 0.37) infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(270deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+.width-breathe {
+  animation: 2s width-breathe ease-in-out infinite both;
+}
+
+@keyframes width-breathe {
+  to {
+    transform: skewX(0rem);
+  }
+  from {
+    transform: skewX(5rem);
+  }
+}
